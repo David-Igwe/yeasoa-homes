@@ -12,10 +12,11 @@
       name="keyword"
       content="Luxury Shortlets Lagos, Serviced Apartments Abuja, Short Term Rentals Nigeria, Premium Homes for Booking"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
-      type="text/css"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -23,12 +24,13 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
     <title>Yeasoa Homes</title>
   </head>
 
-  <body>
+  <body class="bg-light">
     <!-- Navbar -->
-    <nav class="navbar sticky-top navbar-expand-lg bg-body-secondary">
+    <nav class="navbar sticky-top navbar-expand-lg shadow-sm border-bottom">
       <div class="container-fluid">
         <a class="navbar-brand ps-3" href="#">Yeasoa Homes</a>
         <button
@@ -62,12 +64,15 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="container-fluid col-xxl-8 px-4">
+    <header class="container-fluid col-xxl-8 px-4 hero-section">
       <div class="container">
         <div
           class="row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5"
         >
-          <div class="col-lg-6 carousel slide" data-bs-ride="carousel">
+          <div
+            class="col-lg-6 carousel slide hero-carousel"
+            data-bs-ride="carousel"
+          >
             <div class="carousel-inner rounded-3 shadow-lg">
               <div class="carousel-item active">
                 <img
@@ -110,7 +115,11 @@
               perfect blend of elegance and functionality.
             </p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">
+              <a
+                href="https://www.instagram.com/yeasoaluxuryhomes/"
+                class="btn btn-primary btn-lg px-4 me-md-2 hero-btn"
+                target="_blank"
+              >
                 Book Your Luxury Stay Today
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +134,7 @@
                     d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"
                   />
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -203,7 +212,7 @@
               </li>
               <li>Ideal for families or corporate stays</li>
             </ul>
-            <a href="#" class="btn btn-primary">Book Now</a>
+            <a href="https://www.instagram.com/yeasoaluxuryhomes/" class="btn btn-primary" target="_blank">Book Now</a>
           </div>
           <div class="col-md-5 order-1 order-md-2 mb-3 mb-md-0">
             <img
@@ -227,7 +236,7 @@
               <li>Private terraces, ample parking, and concierge services</li>
               <li>Perfect for business executives and leisure travelers</li>
             </ul>
-            <a href="#" class="btn btn-primary">Book Now</a>
+            <a href="https://www.instagram.com/yeasoaluxuryhomes/" class="btn btn-primary" target="_blank">Book Now</a>
           </div>
           <div class="col-md-5 order-1 mb-3 mb-md-0">
             <img
@@ -319,7 +328,7 @@
             alt="Testimonial Client"
             class="img-fluid rounded-circle mb-3 w-50"
           />
-          <h2 class="fw-normal">Adekunle O.</h2>
+          <h2 class="fw-normal h3">Adekunle O.</h2>
           <p class="fst-italic">
             "Stayed at the Lekki apartment &dash; exceeded all expectations!
             Clean, luxurious, and the team was super responsive."
@@ -331,7 +340,7 @@
             alt="Testimonial Client 2"
             class="img-fluid rounded-circle mb-3 w-50"
           />
-          <h2 class="fw-normal">Funke & Family</h2>
+          <h2 class="fw-normal h3">Funke & Family</h2>
           <p class="fst-italic">
             "Perfect home for our family trip to Abuja. Felt safe and
             comfortable throughout."
@@ -363,7 +372,7 @@
     </section>
 
     <!--Footer-->
-    <footer class="container-fluid py-5" id="contact">
+    <footer class="container-fluid py-5 footer-section" id="contact">
       <div class="container">
         <div class="mb-3">
           <h2 class="h5">Contact Us</h2>
@@ -399,7 +408,7 @@
               </svg>
               <a
                 href="https://wa.me/2348036227439"
-                class="text-decoration-none text-dark"
+                class="text-decoration-none"
                 target="_blank"
                 >+234 803 622 7439</a
               >
@@ -419,7 +428,7 @@
               </svg>
               <a
                 href="mailto:davidpeter.di@gmail.com"
-                class="text-decoration-none text-dark"
+                class="text-decoration-none"
                 >info@yeasoahomes.com</a
               >
             </li>
@@ -438,13 +447,13 @@
               </svg>
               <a
                 href="https://www.instagram.com/yeasoaluxuryhomes/"
-                class="text-decoration-none text-dark"
+                class="text-decoration-none"
                 target="_blank"
                 >@yeasoaluxuryhomes</a
               >
               <a
                 href="https://www.instagram.com/yeasoaluxury_rent_shortlet/"
-                class="text-decoration-none text-dark"
+                class="text-decoration-none"
                 target="_blank"
                 >@yeasoaluxury_rent_shortlet</a
               >
