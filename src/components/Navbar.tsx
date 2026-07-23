@@ -55,9 +55,9 @@ export default function Navbar() {
               key={label}
               render={<NavLink to={path} />}
               nativeButton={false}
-              variant="ghost"
+              variant="link"
               size="sm"
-              className="text-muted-foreground hover:text-foreground"
+              className="text-white"
             >
               {label}
             </Button>
@@ -66,11 +66,11 @@ export default function Navbar() {
 
         <div className="ml-auto flex shrink-0 items-center gap-3">
           <Button
-            render={<a href="#" />}
+            render={<a href="#"/>}
             nativeButton={false}
-            variant="ghost"
+            variant="outline"
             size="sm"
-            className="hidden text-muted-foreground hover:text-foreground sm:inline-flex"
+            className="hidden p-4 border border-white text-white bg-transparent  md:inline-flex"
           >
             BOOK NOW
           </Button>
@@ -83,7 +83,7 @@ export default function Navbar() {
               }
               aria-label="Open menu"
             >
-              <IconMenu2 aria-hidden="true" />
+              <IconMenu2 aria-hidden="true" className="stroke-foreground" />
             </SheetTrigger>
             <SheetContent side="right" className="w-full sm:max-w-xs">
               <SheetHeader>
@@ -107,7 +107,7 @@ export default function Navbar() {
                 <Button
                   render={<Link to="#" />}
                   nativeButton={false}
-                  variant="ghost"
+                  variant="default"
                   className="w-full"
                 >
                   BOOK NOW
