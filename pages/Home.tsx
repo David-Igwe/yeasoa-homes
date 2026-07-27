@@ -1,6 +1,7 @@
 import TopNav from "../src/components/TopNav";
 import Navbar from "../src/components/Navbar";
-import HomeHero from "../src/components/HomeHero"
+import HomeHero from "../src/components/HomeHero";
+import HomeProperties from "../src/components/HomeProperties";
 
 
 export default function Home() {
@@ -8,7 +9,8 @@ export default function Home() {
     <>
       <TopNav />
       <Navbar />
-      <HomeHero /> 
+      <HomeHero />
+      <HomeProperties />
     </>
   )
 }

@@ -21,7 +21,7 @@ export default function HomeHero() {
           furnished, serviced properties offer the perfect blend of elegance and
           functionality.
         </p>
-        <Button variant="secondary" render={<Link to='/' />} className="w-fit p-5 uppercase">Book Your Luxury Stay Today!</Button>
+        <Button variant="secondary" nativeButton={false} render={<Link to='/' />} className="w-fit p-5 uppercase">Book Your Luxury Stay Today!</Button>
       </div>
     </section>
   );
