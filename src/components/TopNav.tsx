@@ -13,7 +13,7 @@ import { IconPhone, IconMail, IconBrandInstagram } from '@tabler/icons-react';
 export default function TopNav() {
   return (
     <NavigationMenu className="bg-background h-12 relative z-50">
-      <NavigationMenuList className="justify-start sm:ms-10">
+      <NavigationMenuList className="justify-center sm:justify-start sm:ms-10">
         <NavigationMenuItem>
           <NavigationMenuLink render={<a href="https://wa.me/2348036227439" />} className="hover:underline"><IconPhone /> 08036227439</NavigationMenuLink>
         </NavigationMenuItem>

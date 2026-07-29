@@ -41,10 +41,10 @@ export default function Navbar() {
 
   return (
     <section className={cn(
-        "w-full left-0 right-0 z-40 transition-all duration-100",
+        "w-full left-0 right-0 z-40 transition-all duration-150",
         isScrolled
-          ? "fixed top-0 bg-background/95 backdrop-blur-md shadow-sm text-foreground"
-          : "absolute top-12 bg-transparent text-white"
+          ? "fixed top-0 bg-background/80 backdrop-blur-md shadow-sm text-foreground"
+          : "absolute top-12 text-background"
       )}>
       <header className="relative flex h-16 w-full items-center px-6">
         <Link to="/" className="flex shrink-0 items-center gap-2.5">YEASOA HOMES</Link>
@@ -57,7 +57,7 @@ export default function Navbar() {
               nativeButton={false}
               variant="link"
               size="sm"
-              className="text-white"
+              className={cn(isScrolled ? "text-foreground" : "text-background")}
             >
               {label}
             </Button>
@@ -68,9 +68,9 @@ export default function Navbar() {
           <Button
             render={<a href="#"/>}
             nativeButton={false}
-            variant="outline"
+            variant={isScrolled ? "default" : "outline"}
             size="sm"
-            className="hidden p-4 border border-white text-white bg-transparent  md:inline-flex"
+            className={cn("hidden p-4 md:inline-flex", !isScrolled && "bg-transparent" )}
           >
             BOOK NOW
           </Button>
