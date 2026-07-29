@@ -4,7 +4,7 @@ import PropertyItem from "./PropertyItem";
 export default function HomeProperties() {
   return (
     <section className="my-8">
-      <div className="text-center">
+      <div className="text-center px-8">
         <h2 className="font-display text-2xl font-bold">
           Our Properties (Featured Shortlets)
         </h2>
