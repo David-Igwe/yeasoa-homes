@@ -3,6 +3,7 @@ import Navbar from "../src/components/Navbar";
 import HomeHero from "../src/components/HomeHero";
 import HomeProperties from "../src/components/HomeProperties";
 import PropertyFeatures from "../src/components/PropertyFeatures";
+import Benefits from "../src/components/Benefits"
 import { propertyFeatureList } from "../src/data/propertyFeatureList";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <HomeProperties />
       <hr />
       <PropertyFeatures features={propertyFeatureList} />
+      <Benefits />
     </>
   );
 }
