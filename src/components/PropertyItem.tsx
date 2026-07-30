@@ -1,4 +1,4 @@
-import { type propertyItemType } from "../../public/data/propertyList";
+import { type propertyItemType } from "../data/propertyList";
 import { formatCurrency } from "@automattic/format-currency";
 import { IconBed, IconUsers } from "@tabler/icons-react";
 import { Button } from "./ui/button";

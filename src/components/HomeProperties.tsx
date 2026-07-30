@@ -1,4 +1,4 @@
-import { propertyList } from "../../public/data/propertyList";
+import { propertyList } from "../data/propertyList";
 import PropertyItem from "./PropertyItem";
 
 export default function HomeProperties() {
@@ -19,9 +19,9 @@ export default function HomeProperties() {
       </div>
 
       <div className="flex flex-col md:flex-row items-center gap-y-10 justify-evenly mt-8">
-          {propertyList.map((property) => (
-            <PropertyItem property={property} key={property.propertyName} />
-          ))}
+        {propertyList.map((property) => (
+          <PropertyItem property={property} key={property.propertyName} />
+        ))}
       </div>
     </section>
   );

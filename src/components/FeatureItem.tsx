@@ -1,4 +1,4 @@
-import { type PropertyFeature } from "../../public/data/propertyFeatureList";
+import { type PropertyFeature } from "../data/propertyFeatureList";
 
 export default function FeatureItem({ feature }: { feature: PropertyFeature }) {
   const { feature: featureDescription, icon: Icon } = feature;
