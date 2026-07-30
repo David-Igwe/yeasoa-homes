@@ -3,7 +3,7 @@ import { type PropertyFeature } from "../data/propertyFeatureList";
 
 export default function PropertyFeatures({features}: {features: PropertyFeature[]}) {
   return (
-    <section className="my-8 sm:mx-20">
+    <section className="py-12 sm:mx-20">
       <h3 className="font-display mb-5 text-center text-xl">
         All Properties Include
       </h3>

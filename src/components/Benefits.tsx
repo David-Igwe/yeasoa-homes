@@ -2,7 +2,7 @@ import { benefitList } from "../data/benefitList";
 
 export default function Benefits() {
   return (
-    <section className="py-10 px-15">
+    <section className="py-12 px-15">
       <h3 className="font-display mb-6 text-center text-xl">
         Why Shortlet with Yeasoa Homes?
       </h3>

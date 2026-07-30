@@ -43,7 +43,7 @@ export default function Navbar() {
     <section className={cn(
         "w-full left-0 right-0 z-40 transition-all duration-150",
         isScrolled
-          ? "fixed top-0 bg-background/80 backdrop-blur-md shadow-sm text-foreground"
+          ? "fixed top-0 bg-background/80 backdrop-blur-md shadow-lg text-foreground"
           : "absolute top-12 text-background"
       )}>
       <header className="relative flex h-16 w-full items-center px-6">

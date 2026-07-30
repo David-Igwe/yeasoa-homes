@@ -3,7 +3,7 @@ import PropertyItem from "./PropertyItem";
 
 export default function HomeProperties() {
   return (
-    <section className="my-8">
+    <section className="py-10">
       <div className="text-center px-8">
         <h2 className="font-display text-2xl font-bold">
           Our Properties (Featured Shortlets)
@@ -18,7 +18,7 @@ export default function HomeProperties() {
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center gap-y-10 justify-evenly mt-8">
+      <div className="flex flex-col md:flex-row items-center gap-y-10 justify-evenly mt-10">
         {propertyList.map((property) => (
           <PropertyItem property={property} key={property.propertyName} />
         ))}
