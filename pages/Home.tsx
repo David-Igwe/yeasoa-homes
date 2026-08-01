@@ -5,6 +5,8 @@ import HomeProperties from "../src/components/HomeProperties";
 import PropertyFeatures from "../src/components/PropertyFeatures";
 import Benefits from "../src/components/Benefits"
 import { propertyFeatureList } from "../src/data/propertyFeatureList";
+import { Separator } from "../src/components/ui/separator";
+
 
 export default function Home() {
   return (
@@ -13,8 +15,9 @@ export default function Home() {
       <Navbar />
       <HomeHero />
       <HomeProperties />
-      <hr />
+      <Separator />
       <PropertyFeatures features={propertyFeatureList} />
+      <Separator />
       <Benefits />
     </>
   );
