@@ -5,6 +5,7 @@ import HomeProperties from "../src/components/HomeProperties";
 import PropertyFeatures from "../src/components/PropertyFeatures";
 import Benefits from "../src/components/Benefits";
 import OwnersInfo from "../src/components/OwnersInfo";
+import Footer from "../src/components/Footer";
 import { propertyFeatureList } from "../src/data/propertyFeatureList";
 import { Separator } from "../src/components/ui/separator";
 
@@ -21,6 +22,7 @@ export default function Home() {
       <Separator />
       <Benefits />
       <OwnersInfo />
+      <Footer />
     </>
   );
 }
