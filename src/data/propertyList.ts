@@ -1,3 +1,6 @@
+import { IconBed, IconBolt, IconCar, IconDeviceGamepad2, IconDeviceTv, IconDroplet, IconHome, IconMapPin, IconShieldCheck, IconSparkles, IconSwimming, IconToolsKitchen, IconWashMachine, IconWifi } from '@tabler/icons-react';
+import {type PropertyFeature} from "./propertyFeatureList"
+
 export type propertyItemType = {
     propertyName: string;
     description: string;
@@ -5,7 +8,7 @@ export type propertyItemType = {
     price: number;
     location: string;
     imgUrl: string;
-    features: string[];
+    features: PropertyFeature[];
     rooms: number;
     capacity: number;
     note?: string[];
@@ -20,20 +23,20 @@ export const propertyList: propertyItemType[] = [
     location: "Lekki Right, Lagos",
     imgUrl: "/img/property_1.jpg",
     features: [
-      "24/7 Power Supply",
-      "Serene environment",
-      "Super fast internet",
-      "PS5 Console",
-      "Proximity to Filling station, Mega chicken and QMB Supermarket",
-      "Netflix / YouTube",
-      "Ludo",
-      "En-suite room",
-      "Daily housekeeping",
-      "Dedicated car park space",
-      "Equipped kitchen",
-      "Washing machine",
-      "Balcony space",
-      "Tastefully furnished",
+      { feature: "24/7 power supply", icon: IconBolt },
+      { feature: "Serene environment", icon: IconHome },
+      { feature: "High-speed WiFi", icon: IconWifi },
+      { feature: "Netflix / YouTube", icon: IconDeviceTv },
+      { feature: "PS5 console", icon: IconDeviceGamepad2 },
+      { feature: "Proximity to filling station, eatery and supermarket", icon: IconMapPin },
+      { feature: "Board games", icon: IconDeviceGamepad2 },
+      { feature: "En-suite rooms", icon: IconBed },
+      { feature: "Daily Housekeeping", icon: IconSparkles },
+      { feature: "Dedicated parking space", icon: IconCar },
+      { feature: "Equipped kitchen", icon: IconToolsKitchen },
+      { feature: "Washing machine", icon: IconWashMachine },
+      { feature: "Balcony space", icon: IconHome },
+      { feature: "Tastefully furnished interiors", icon: IconHome },
     ],
     rooms: 2,
     capacity: 4,
@@ -51,11 +54,14 @@ export const propertyList: propertyItemType[] = [
     location: "Guzape, Abuja",
     imgUrl: "/img/property_2.jpg",
     features: [
-      "Elegant minimalist interior décor",
-      "Spacious living and dining area",
-      "High-speed internet with premium streaming services (Netflix, YouTube, etc.)",
-      "Access to swimming pool and gym",
-      "24/7 security and power supply",
+      { feature: "Elegant minimalist interiors", icon: IconHome },
+      { feature: "Spacious living and dining area", icon: IconHome },
+      { feature: "High-speed WiFi", icon: IconWifi },
+      { feature: "Netflix / YouTube", icon: IconDeviceTv },
+      { feature: "Swimming pool access", icon: IconSwimming },
+      { feature: "Gym access", icon: IconHome },
+      { feature: "24/7 power supply", icon: IconBolt },
+      { feature: "Security & surveillance", icon: IconShieldCheck },
     ],
     rooms: 1,
     capacity: 2,
@@ -68,18 +74,17 @@ export const propertyList: propertyItemType[] = [
     location: "Lekki Phase 1, Lagos",
     imgUrl: "/img/property_3.jpg",
     features: [
-      "24/7 power supply",
-      "Gated & secure estate",
-      "Walk-in closet",
-      "Fibre optics internet",
-      "PS5 console",
-      "Clean water",
-      "Spacious compound",
-      "Serene environment",
-      "DSTV/Showmax & Netflix",
-      "Smart TVs",
-      "Microwave/Oven",
-      "Housekeeping",
+      { feature: "24/7 power supply", icon: IconBolt },
+      { feature: "Security & surveillance", icon: IconShieldCheck },
+      { feature: "Walk-in closet", icon: IconBed },
+      { feature: "High-speed WiFi", icon: IconWifi },
+      { feature: "PS5 console", icon: IconDeviceGamepad2 },
+      { feature: "Clean water supply", icon: IconDroplet },
+      { feature: "Spacious outdoor area", icon: IconHome },
+      { feature: "Serene environment", icon: IconHome },
+      { feature: "DSTV/Showmax & Netflix", icon: IconDeviceTv },
+      { feature: "Kitchen appliances", icon: IconToolsKitchen },
+      { feature: "Daily Housekeeping", icon: IconSparkles },
     ],
     rooms: 1,
     capacity: 2,
