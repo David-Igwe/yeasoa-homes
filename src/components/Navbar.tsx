@@ -47,7 +47,7 @@ export default function Navbar() {
           : "absolute top-12 text-background"
       )}>
       <header className="relative flex h-16 w-full items-center px-6">
-        <Link to="/" className="flex shrink-0 items-center gap-2.5">YEASOA HOMES</Link>
+        <Link to="/">YEASOA HOMES</Link>
 
         <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 md:flex">
           {navLinks.map(({label, path}) => (
