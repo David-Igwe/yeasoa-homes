@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 
 export default function PropertyItem({property}: {property: propertyItemType}) {
-  const { propertyName, price, capacity, imgUrl, location, rooms } = property;
+  const { propertyName, price, capacity, imgUrl, location, rooms, id } = property;
   const formattedPrice = formatCurrency(price, "NGN", { stripZeros: true });
   return (
     <div className="flex flex-col gap-3">
@@ -42,7 +42,7 @@ export default function PropertyItem({property}: {property: propertyItemType}) {
       <Button
         variant="default"
         nativeButton={false}
-        render={<Link to="#" />}
+        render={<Link to={`/property/${id}`} />}
         className="w-fit"
       >
         BOOK NOW

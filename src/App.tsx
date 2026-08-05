@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Home from "../pages/Home"
-
+import Property from "../pages/Property"
 import './App.css'
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<Home />} />
+        <Route path="/property/:propertyId" element={<Property />} />
       </Routes>
     </BrowserRouter>
   )

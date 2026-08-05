@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 export default function HomeHero() {
   return (
     <section className="relative bg-[url(/img/property6.jpg)] bg-no-repeat bg-center bg-cover text-white w-full h-screen">
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/70" />
       <div className="relative flex flex-col h-full justify-center items-center gap-y-5">
         <header className="flex flex-col items-center">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-center mb-3 px-8">

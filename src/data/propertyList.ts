@@ -4,6 +4,7 @@ import {type PropertyFeature} from "./propertyFeatureList"
 export type propertyItemType = {
     propertyName: string;
     description: string;
+    id: string;
     available: boolean;
     price: number;
     location: string;
@@ -18,6 +19,7 @@ export const propertyList: propertyItemType[] = [
   {
     propertyName: "Creamstone Aparment",
     description: "Brand new cute 2 bedroom apartment with PS5 in Lekki Right",
+    id: "0001",
     available: true,
     price: 100000,
     location: "Lekki Right, Lagos",
@@ -49,6 +51,7 @@ export const propertyList: propertyItemType[] = [
   {
     propertyName: "Pristine",
     description: "Newly launched 1 bed with pool, gym, outdoor snooker",
+    id: "0002",
     available: true,
     price: 100000,
     location: "Guzape, Abuja",
@@ -69,6 +72,7 @@ export const propertyList: propertyItemType[] = [
   {
     propertyName: "Pearl",
     description: "Luxe 1 bedroom with a PS5 console",
+    id: "0003",
     available: true,
     price: 50000,
     location: "Lekki Phase 1, Lagos",
