@@ -1,7 +1,7 @@
 import { propertyList } from "../data/propertyList";
 import PropertyItem from "./PropertyItem";
 
-export default function HomeProperties() {
+export default function Properties() {
   return (
     <section className="py-10">
       <div className="text-center px-8">

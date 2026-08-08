@@ -1,7 +1,7 @@
 import TopNav from "../src/components/TopNav";
 import Navbar from "../src/components/Navbar";
 import HomeHero from "../src/components/HomeHero";
-import HomeProperties from "../src/components/HomeProperties";
+import Properties from "../src/components/HomeProperties";
 import PropertyFeatures from "../src/components/PropertyFeatures";
 import Benefits from "../src/components/Benefits";
 import OwnersInfo from "../src/components/OwnersInfo";
@@ -16,9 +16,9 @@ export default function Home() {
       <TopNav />
       <Navbar />
       <HomeHero />
-      <HomeProperties />
+      <Properties />
       <Separator />
-      <PropertyFeatures features={propertyFeatureList} />
+      <PropertyFeatures features={propertyFeatureList} heading="All Properties Include" />
       <Separator />
       <Benefits />
       <OwnersInfo />
