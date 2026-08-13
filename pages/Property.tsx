@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import TopNav from "../src/components/TopNav";
 import Navbar from "../src/components/Navbar";
@@ -72,7 +72,9 @@ export default function Property() {
             </div>
             <Button
               variant="outline"
-              className="w-full border-primary font-semibold uppercase py-6 rounded-sm"
+              className="w-full border-primary font-semibold uppercase py-6 rounded-sm hover:bg-primary hover:text-primary-foreground ease-in-out duration-100 transition"
+              nativeButton={false}
+              render={<Link to={`/order/create`} />}
             >
               Book Now
             </Button>
