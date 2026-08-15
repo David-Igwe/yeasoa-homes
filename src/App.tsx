@@ -6,11 +6,13 @@ import OrderSummary from "../pages/OrderSummary"
 import OrderCheckout from "../pages/OrderCheckout"
 import OrderComplete from "../pages/OrderComplete"
 import ScrollToTop from "./components/ScrollToTop"
+import OrderProvider from "./context/Order/OrderProvider"
 import './App.css'
 
 function App() {
 
   return (
+    <OrderProvider>
     <BrowserRouter>
     <ScrollToTop />
       <Routes>
@@ -24,6 +26,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </OrderProvider>
   )
 }
 
