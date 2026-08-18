@@ -6,12 +6,21 @@ import { Field } from "./ui/field";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { IconCalendarWeek } from "@tabler/icons-react";
 
-export default function DatePicker() {
-  const [date, setDate] = useState<Date>();
+type DatePickerProps = {
+  date: Date | undefined;
+  setDate: React.Dispatch<React.SetStateAction<Date | undefined>>;
+  field: {
+    value: Date;
+    onChange: (date: Date | undefined) => void;
+  }
+}
+
+export default function DatePicker({ date, setDate, field }: DatePickerProps) {
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <Field className="w-44">
-      <Popover>
+      <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger
           render={
             <Button
@@ -28,9 +37,13 @@ export default function DatePicker() {
         <PopoverContent className="w-auto rounded-sm p-0" align="start">
           <Calendar
             mode="single"
-            selected={date}
-            onSelect={setDate}
-            defaultMonth={date}
+            selected={field.value}
+            onSelect={(date) => {
+              setDate(date)
+              field.onChange(date)
+              setOpen(false)
+            }}
+            defaultMonth={field.value}
           />
         </PopoverContent>
       </Popover>

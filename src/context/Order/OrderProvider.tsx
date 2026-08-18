@@ -24,14 +24,14 @@ function reducer(state: Order, action: {type: string, payload?: OrderItem }): Or
 export default function OrderProvider({children}: {children: ReactNode}) {
   const [state, dispatch] = useReducer(reducer, []);
 
-  const addItem = (orderItem: OrderItem) => dispatch({type: 'ADD_ITEM', payload: orderItem});
+  const addOrderItem = (orderItem: OrderItem) => dispatch({type: 'ADD_ITEM', payload: orderItem});
 
-  const removeItem = (orderItem: OrderItem) => dispatch({type: 'REMOVE_ITEM', payload: orderItem});
+  const removeOrderItem = (orderItem: OrderItem) => dispatch({type: 'REMOVE_ITEM', payload: orderItem});
 
   const clearOrder = () => dispatch({type: 'CLEAR_ORDER'});
 
   return (
-    <OrderContext.Provider value={{state, addItem, removeItem, clearOrder}}>
+    <OrderContext.Provider value={{state, addOrderItem, removeOrderItem, clearOrder}}>
       {children}
     </OrderContext.Provider>
   )

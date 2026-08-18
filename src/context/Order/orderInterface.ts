@@ -1,7 +1,10 @@
 export interface OrderItem {
     propertyName: string,
     propertyId: string,
-    bookingPeriod: Date,
+    bookingPeriod: {
+        start: Date,
+        end?: Date
+    },
     nights: number,
     guests: number,
     pricePerNight: number,

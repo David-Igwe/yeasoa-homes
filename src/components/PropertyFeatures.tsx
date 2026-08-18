@@ -14,7 +14,7 @@ export default function PropertyFeatures({features, heading}: PropertyFeaturesPr
       </h3>
       <div className="grid justify-items-center grid-col sm:grid-cols-2 lg:grid-cols-3 gap-2">
         {features.map((feature) => (
-          <FeatureItem feature={feature} />
+          <FeatureItem feature={feature} key={feature.feature} />
         ))}
       </div>
     </section>
