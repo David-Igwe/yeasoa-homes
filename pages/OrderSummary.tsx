@@ -1,7 +1,10 @@
+import { useOrder } from "../src/context/Order/useOrder";
 
+import OrderPriceSummary from "../src/components/OrderPriceSummary";
+import NoOrder from "../src/components/NoOrder";
 
 export default function OrderSummary() {
-  return (
-    <div>OrderSummary</div>
-  )
+  const { state } = useOrder();
+
+  return <>{state.length ? <OrderPriceSummary /> : <NoOrder />}</>;
 }

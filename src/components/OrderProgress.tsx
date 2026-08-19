@@ -6,7 +6,7 @@ import { cn } from "../lib/utils"
 
 const orderSteps = [
   "Select Apartments",
-  "Summary and Price",
+  "Price Summary",
   "Contact Detail",
   "Complete",
 ];

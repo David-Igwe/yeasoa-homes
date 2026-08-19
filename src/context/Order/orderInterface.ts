@@ -3,7 +3,7 @@ export interface OrderItem {
     propertyId: string,
     bookingPeriod: {
         start: Date,
-        end?: Date
+        end: Date
     },
     nights: number,
     guests: number,
