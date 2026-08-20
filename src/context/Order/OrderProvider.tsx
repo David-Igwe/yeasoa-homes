@@ -11,7 +11,7 @@ function reducer(state: Order, action: {type: string, payload?: OrderItem }): Or
           return state    
 
       case 'REMOVE_ITEM':
-        return state.filter((orderItem) => orderItem.propertyId === action.payload?.propertyId)
+        return state.filter((orderItem) => orderItem.propertyId !== action.payload?.propertyId)
 
       case 'CLEAR_ORDER':
         return []
