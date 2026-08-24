@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 import { useOrder } from "../context/Order/useOrder";
 
-import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
+import TotalOrderPrices from "./TotalOrderPrices";
 
 import { IconTrash } from "@tabler/icons-react";
 
@@ -12,11 +12,6 @@ import { formatCurrency } from "@automattic/format-currency";
 
 export default function OrderPriceSummary() {
   const { state, removeOrderItem } = useOrder();
-  const orderItemsPrices = state.map((orderItem) => orderItem.totalPrice);
-  const subTotal = orderItemsPrices.reduce((acc, curr) => acc + curr);
-  const taxPercentage = 0.05;
-  const taxAmount = subTotal * taxPercentage;
-  const grandTotal = subTotal + taxAmount;
 
   return (
     <section className="mx-5 sm:mx-20 py-8">
@@ -67,33 +62,8 @@ export default function OrderPriceSummary() {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col gap-1">
-          <div className="flex justify-between">
-            <p>Subtotal</p>
-            <p>
-              {formatCurrency(subTotal, "NGN", {
-                stripZeros: true,
-              })}
-            </p>
-          </div>
-          <Separator />
-          <div className="flex justify-between">
-            <p>Tax ({taxPercentage * 100}%)</p>
-            <p>
-              {formatCurrency(taxAmount, "NGN", {
-                stripZeros: true,
-              })}
-            </p>
-          </div>
-          <Separator />
-          <div className="flex justify-between">
-            <p className="font-semibold">Grand Total</p>
-            <p className="font-bold">
-              {formatCurrency(grandTotal, "NGN", {
-                stripZeros: true,
-              })}
-            </p>
-          </div>
+        <div>
+          <TotalOrderPrices />
           <Button
             variant="secondary"
             nativeButton={false}

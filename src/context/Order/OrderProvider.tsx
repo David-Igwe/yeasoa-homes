@@ -30,8 +30,18 @@ export default function OrderProvider({children}: {children: ReactNode}) {
 
   const clearOrder = () => dispatch({type: 'CLEAR_ORDER'});
 
+  const orderItemsPrices = state.map((orderItem) => orderItem.totalPrice);
+
+  const subTotal = orderItemsPrices.length ? orderItemsPrices.reduce((acc, curr) => acc + curr) : 0
+
+  const taxPercentage = 0.05;
+
+  const taxAmount = subTotal * taxPercentage;
+
+  const grandTotal = subTotal + taxAmount;
+
   return (
-    <OrderContext.Provider value={{state, addOrderItem, removeOrderItem, clearOrder}}>
+    <OrderContext.Provider value={{state, addOrderItem, removeOrderItem, clearOrder, subTotal, taxPercentage, taxAmount, grandTotal}}>
       {children}
     </OrderContext.Provider>
   )
