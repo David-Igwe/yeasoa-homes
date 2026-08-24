@@ -1,7 +1,9 @@
-import {useState, useEffect} from "react";
-import {Link, NavLink} from "react-router-dom"
+import { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
 
-import { Button } from "./ui/button"
+import { useOrder } from "../context/Order/useOrder";
+
+import { Button } from "./ui/button";
 import {
   Sheet,
   SheetClose,
@@ -10,10 +12,10 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "./ui/sheet"
+} from "./ui/sheet";
 
-import { cn } from "../lib/utils"
-import {IconMenu2} from "@tabler/icons-react"
+import { cn } from "../lib/utils";
+import { IconMenu2 } from "@tabler/icons-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -32,25 +34,30 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-  { label: "HOME", path: "#" },
-  { label: "ABOUT", path: "#" },
-  { label: "PROPERTIES", path: "#" },
-  { label: "BLOG", path: "#" },
-  { label: "CONTACT", path: "#" },
-]
+    { label: "HOME", path: "#" },
+    { label: "ABOUT", path: "#" },
+    { label: "PROPERTIES", path: "#" },
+    { label: "BLOG", path: "#" },
+    { label: "CONTACT", path: "#" },
+  ];
+
+  const { state } = useOrder();
+  const numberOfOrders = state.length;
 
   return (
-    <section className={cn(
+    <section
+      className={cn(
         "w-full left-0 right-0 z-40 transition-all duration-150",
         isScrolled
           ? "fixed top-0 bg-background/80 backdrop-blur-md shadow-lg text-foreground"
-          : "absolute top-12 text-background"
-      )}>
+          : "absolute top-12 text-background",
+      )}
+    >
       <header className="relative flex h-16 w-full items-center px-6">
         <Link to="/">YEASOA HOMES</Link>
 
         <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 md:flex">
-          {navLinks.map(({label, path}) => (
+          {navLinks.map(({ label, path }) => (
             <Button
               key={label}
               render={<NavLink to={path} />}
@@ -65,16 +72,42 @@ export default function Navbar() {
         </nav>
 
         <div className="ml-auto flex shrink-0 items-center gap-3">
-          <Button
-            render={<a href="#"/>}
-            nativeButton={false}
-            variant={isScrolled ? "default" : "outline"}
-            size="sm"
-            className={cn("hidden p-4 md:inline-flex", !isScrolled && "bg-transparent" )}
-          >
-            BOOK NOW
-          </Button>
-          
+          {numberOfOrders ? (
+            <div className="relative">
+              <Button
+                render={<Link to="/order/create" />}
+                nativeButton={false}
+                variant={isScrolled ? "default" : "outline"}
+                size="sm"
+                className="hidden p-4 md:inline-flex"
+              >
+                CHECK OUT
+              </Button>
+              <div
+                className={cn(
+                  "absolute text-xs font-medium size-5 flex justify-center items-center rounded-full -top-2 -right-2",
+                  isScrolled
+                    ? "bg-background text-primary"
+                    : "bg-primary text-primary-foreground",
+                )}
+              >
+                <span>{numberOfOrders}</span>
+              </div>
+            </div>
+          ) : (
+            <Button
+              render={<a href="#" />}
+              nativeButton={false}
+              variant={isScrolled ? "default" : "outline"}
+              size="sm"
+              className={cn(
+                "hidden p-4 md:inline-flex",
+                !isScrolled && "bg-transparent text-background",
+              )}
+            >
+              BOOK NOW
+            </Button>
+          )}
 
           <Sheet>
             <SheetTrigger
@@ -92,7 +125,7 @@ export default function Navbar() {
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col px-2">
-                {navLinks.map(({label, path}) => (
+                {navLinks.map(({ label, path }) => (
                   <SheetClose
                     key={label}
                     render={<NavLink to={path} />}
