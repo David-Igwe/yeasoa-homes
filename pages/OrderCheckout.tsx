@@ -4,6 +4,7 @@ import { Controller, useForm } from "react-hook-form";
 
 import { memo } from "react";
 import { useNavigate } from "react-router-dom";
+import { useOrder } from "../src/context/Order/useOrder";
 
 import { Flag } from "@blade-flags/react";
 import { defaultFlags } from "@blade-flags/core/flags/default";
@@ -89,11 +90,13 @@ export default function OrderCheckout() {
     defaultValues: defaultContactFormValues,
   });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { clearOrder } = useOrder();
 
   const onSubmitContactForm = (data: contactFormType) => {
     //Form submission logic to the backend goes here, also I think it should navigate to the success page but also have an error modal in case the order was not able to go through.
     console.log(data);
+    clearOrder();
     navigate("/order/create/success");
   };
 
@@ -123,7 +126,6 @@ export default function OrderCheckout() {
                         {...field}
                         id="firstName"
                         aria-invalid={fieldState.invalid}
-                        required
                       />
                       {fieldState.invalid && (
                         <FieldError errors={[fieldState.error]} />
@@ -147,7 +149,6 @@ export default function OrderCheckout() {
                         {...field}
                         id="lastName"
                         aria-invalid={fieldState.invalid}
-                        required
                       />
                       {fieldState.invalid && (
                         <FieldError errors={[fieldState.error]} />
@@ -171,7 +172,6 @@ export default function OrderCheckout() {
                         {...field}
                         id="email"
                         aria-invalid={fieldState.invalid}
-                        required
                       />
                       {fieldState.invalid && (
                         <FieldError errors={[fieldState.error]} />
@@ -195,7 +195,6 @@ export default function OrderCheckout() {
                         {...field}
                         id="phone"
                         aria-invalid={fieldState.invalid}
-                        required
                       />
                       {fieldState.invalid && (
                         <FieldError errors={[fieldState.error]} />
